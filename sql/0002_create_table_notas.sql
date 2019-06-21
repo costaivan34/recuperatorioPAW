@@ -1,0 +1,12 @@
+USE notas;
+
+CREATE TABLE notasAlumnos(
+	id INTEGER NOT NULL PRIMARY KEY,
+    nombre TEXT NOT NULL, 
+	apellido TEXT NOT NULL ,
+	nota1 INTEGER NOT NULL,
+	nota2 INTEGER NOT NULL,
+	nota3 INTEGER NOT NULL,
+	promedio INTEGER NOT NULL
+);
+

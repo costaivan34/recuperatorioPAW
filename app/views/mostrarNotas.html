@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Lista de Notas{% endblock %}
+
+{% block header %}
+    {{ include('partials/nav.html') }}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <meta name="keywords" content="PAW,2018,Templates,PHP">
+{% endblock %}
+
+{% block main %}
+<h2>Notas de alumnos</h2>
+<table class="tabla" onload="cambia_color()">
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th> 
+        <th>Nota 1</th> 
+        <th>Nota 2</th> 
+        <th>Nota 3</th> 
+        <th>Promedio</th> 
+    </tr>
+{% for alumno in notas %}
+<tr>
+    <td>{{ alumno.nombre }}</td>
+    <td>{{ alumno.apellido }}</td>
+    <td>{{ alumno.nota1 }}</td>
+    <td>{{ alumno.nota2 }}</td>
+    <td>{{ alumno.nota3 }}</td>
+    <td class="promedio">5</td>
+</tr>
+{% else %}
+<span><h3>No hay notas cargadas</h3></span>
+{% endfor %}
+</table>
+{% endblock %}
